@@ -46,3 +46,18 @@ Output
 Writing the contents to the file...
 Reading the contents from the file ...
   10  20  30  40  50  0  0  0  0  0
+Flow charts-
+
+Start
+
+create a tile Telephone.txt"
+
+Read input from user
+
+write the data to the file using Of Stream
+
+Read the input from the file using lostream
+
+Display the contents
+
+End.
