@@ -25,12 +25,19 @@ print("Count of all characters in sentence is :\n "
 
 
 
-# c) To check whether given string is palindrome or not
-rev=reversed(sentence)
-if list(sentence)==list(rev):
-    print("its a palindrome")
+# c) To check given string is palindrome or not
+
+j = -1
+flag = 0
+for i in sentence:
+    if i != sentence[j]:
+        flag = 1
+        break
+    j=j-1
+if flag ==1:
+    print("It's not a pallindrome")
 else:
-    print("its not a palindrome")
+    print("It's a pallindrome")
 
 
 
