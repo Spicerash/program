@@ -3,61 +3,47 @@ Experiment 4: Write a C++ program that creates an output file, writes informatio
 #include <iostream>
 #include <fstream> 
 using namespace std;
-#include <process.h> 
 const int MAX = 10;
 int array1[MAX] = { 10,20,30,40,50 };
 int array2[MAX];
 int main()
 {
-    ofstream os; //create output stream
-    os.open("d:\\test.dat", ios::trunc | ios::binary);//Opening file
-    if (!os)
-    {
-        cerr << "Could not open output file\n";   //Error Handling
-        exit(1);
-    }
-    cout << "Writing the contents to the file...\n\n"; 
-    os.write((char*)&array1,sizeof(array1));//writing 'array1' to file
-    if (!os)
-    {
-        cerr << "Could not write to file\n";  //Error handling
-        exit(1);
-    }
-    os.close();     //close the file
-    ifstream is; //create input stream for reading the contents from file
-    is.open("d:\\test.dat", ios::binary);
-    if (!is)
-    {
-        cerr << "Could not open input file\n"; //Error Handling
-        exit(1);
-    }
-    cout << "Reading the contents from the file ...\n";
-    is.read((char*)&array2,sizeof(array2));  //reading the contents in                                     //another array 'array2'
-    if (!is)
-    {
-        cerr << "Could not read from file\n"; //Error Handling
-        exit(1);
-    }
-    for (int j = 0; j < MAX; j++) //check data
-        cout << "  " << array2[j];
-    return 0;
+	ofstream os; //create output stream
+	os.open("d:\\test.dat", ios::trunc | ios::binary);//Opening file
+	if (!os)
+	{
+		cerr << "Could not open output file\n";   //Error Handling
+		exit(1);
+	}
+	cout << "Writing the contents to the file...\n\n"; 
+	os.write((char*)&array1,sizeof(array1));//writing 'array1' to file
+	if (!os)
+	{
+		cerr << "Could not write to file\n";  //Error handling
+		exit(1);
+	}
+	os.close(); 	//close the file
+	ifstream is; //create input stream for reading the contents from file
+	is.open("d:\\test.dat", ios::binary);
+	if (!is)
+	{
+		cerr << "Could not open input file\n"; //Error Handling
+		exit(1);
+	}
+	cout << "Reading the contents from the file ...\n";
+	is.read((char*)&array2,sizeof(array2));  //reading the contents in 									//another array 'array2'
+	if (!is)
+	{
+		cerr << "Could not read from file\n"; //Error Handling
+		exit(1);
+	}
+	for (int j = 0; j < MAX; j++) //check data
+		cout << "  " << array2[j];
+	return 0;
 }
-Output
-Writing the contents to the file...
-Reading the contents from the file ...
-  10  20  30  40  50  0  0  0  0  0
-Flow charts-
-
-Start
-
-create a tile Telephone.txt"
-
-Read input from user
-
-write the data to the file using Of Stream
-
-Read the input from the file using lostream
-
-Display the contents
-
-End.
+Algorithm:
+1. Create a file “telelphone.txt”
+2. Read input from the user .
+3. Write the data to the file using oftsream.
+4. Read the input from the file using ifstream
+5. Display the contents
